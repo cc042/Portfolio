@@ -10,7 +10,7 @@ var talk3 = new SpeechSynthesisUtterance(msg3);
 
 document.addEventListener('contextmenu', function (e) {
     window.speechSynthesis.speak(talk1)
-    // e.preventDefault();
+    e.preventDefault();
 });
 
 document.onkeydown = function (e) {

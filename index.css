@@ -852,7 +852,6 @@ details a {
     color: var(--vegas-gold)
 }
 
-
 .LearnCards svg {
     width: 150px;
     height: 150px;
@@ -1043,7 +1042,8 @@ textarea {
     margin-bottom: 20px;
 }
 
-.SubmitForm {
+.SubmitForm,
+.Clear_Form {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1056,7 +1056,7 @@ textarea {
     color: #FFDB70;
     font-size: 16px;
     font-family: var(--ff-poppins);
-    width: 182px;
+    width: 80px;
     box-shadow: var(--shadow-2);
     cursor: pointer;
 }
@@ -1065,8 +1065,9 @@ textarea {
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: end;
     margin-top: 20px;
+    gap: 20px;
 }
 
 .input:focus:invalid {
@@ -1273,6 +1274,37 @@ form:invalid .SubmitForm {
     box-shadow: 0 0 20px #FFDB70;
 }
 
+.Error,
+.Sucsses {
+    margin: auto;
+    animation: fade 1s ease;
+    background: var(--bg-gradient-onyx);
+    width: 400px;
+    height: max-content;
+    padding: 20px;
+    border-radius: 20px;
+    position: relative;
+}
+
+.Error::backdrop,
+.Sucsses::backdrop {
+    backdrop-filter: blur(10px);
+}
+
+.closeError,
+.closeSucsses {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
 @media screen and (max-width:1250px) {
     main {
         flex-direction: column;
@@ -1398,19 +1430,6 @@ form:invalid .SubmitForm {
     .webdevelopment p {
         text-align: center;
         margin-top: 10px;
-    }
-
-    .formBtn {
-        flex-direction: column;
-        gap: 30px;
-    }
-
-    .formBtn h1 {
-        align-self: start;
-    }
-
-    .formBtn button {
-        align-self: end;
     }
 
     .Certificates {

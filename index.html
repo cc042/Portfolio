@@ -26,10 +26,9 @@
 	<!-- Script Files -->
 	<script src="JS/tabs.js" defer></script> <!-- Done -->
 	<script src="JS/title.js" defer></script> <!-- Done -->
-	<script src="JS/popUp.js" defer></script> <!-- Done -->
+	<script src="JS/popup.js" defer></script> <!-- Done -->
 	<script src="JS/contact.js" defer></script> <!-- Done -->
 	<script src="JS/cookies.js" defer></script> <!-- Done -->
-	<script src="JS/context.js" defer></script> <!-- Done -->
 	<script src="JS/onload.js" defer></script> <!-- Done -->
 	<script src="JS/responsive.js" defer></script> <!-- Done -->
 	<script src="JS/settings.js" defer></script> <!-- Done -->
@@ -116,6 +115,34 @@
 					<input type="submit" value="Okay" class="cookieSubmit">
 				</div>
 			</form>
+		</div>
+	</dialog>
+
+	<dialog class="Error">
+		<div class="ErrorItem">
+			<button class="closeError">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="18" height="18">
+					<path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+						stroke-width="32" d="M368 368L144 144M368 144L144 368">
+				</svg>
+			</button>
+
+			<h1 align="center" style="color:var(--bittersweet-shimmer)">Error Happend</h1>
+			<p align="center" id="ErrorMessage" style="color:#FFF;font-size:20px;"></p>
+		</div>
+	</dialog>
+
+	<dialog class="Sucsses">
+		<div class="SucssesItem">
+			<button class="closeSucsses">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="18" height="18">
+					<path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+						stroke-width="32" d="M368 368L144 144M368 144L144 368">
+				</svg>
+			</button>
+
+			<h1 align="center" style="color:var(--orange-yellow-crayola)">Sucsses Happend</h1>
+			<p align="center" id="SucssesMessage" style="color:#FFF;font-size:20px;"></p>
 		</div>
 	</dialog>
 
@@ -1266,7 +1293,7 @@
 							<span>Echo AI Web Search</span>
 						</summary>
 						<div class="options">
-							<a href="https://echo-ai-search.netlify.app/">Visit</a>
+							<a href="https://echo-ai-search.netlify.app/" target="_blank">Visit</a>
 						</div>
 					</details>
 
@@ -1276,7 +1303,7 @@
 							<span>To-Do App</span>
 						</summary>
 						<div class="options">
-							<a href="https://code-comet-todo-list.netlify.app/">Visit</a>
+							<a href="https://code-comet-todo-list.netlify.app/" target="_blank">Visit</a>
 						</div>
 					</details>
 
@@ -1286,7 +1313,7 @@
 							<span>Weather App</span>
 						</summary>
 						<div class="options">
-							<a href="https://code-comet-weather.netlify.app/">Visit</a>
+							<a href="https://code-comet-weather.netlify.app/" target="_blank">Visit</a>
 						</div>
 					</details>
 				</div>
@@ -1574,22 +1601,43 @@
 					<h1 class="title">Contact</h1>
 					<div id="separator"></div>
 				</header>
+
 				<div class="contact">
 					<h1 class="title1" style="margin: 10px 0;">Contact Form</h1>
 					<form class="whatsapp">
 						<div class="UserInfo">
-							<input required placeholder="First Name" type="text" id="firstName" class="input"
-								minlength="3" pattern="[a-z]*">
+							<div>
+								<input required placeholder="First Name" type="text" id="firstName" class="input"
+									pattern="[a-z]*">
+								<p style="margin:5px 0 0 20px;color:var(--bittersweet-shimmer)">
+									*Lower Case Letter
+								</p>
+							</div>
 
-							<input required placeholder="Last Name" type="text" id="secondName" class="input"
-								minlength="3" pattern="[a-z]*">
+							<div>
+								<input required placeholder="Last Name" type="text" id="secondName" class="input"
+									minlength="3" pattern="[a-z]*">
+								<p style="margin:5px 0 0 20px;color:var(--bittersweet-shimmer)">
+									*Lower Case Letter
+								</p>
+							</div>
 
-							<input required minlength="10" placeholder="Email Address" id="EmailAdress" type="email"
-								class="input">
+							<div>
+								<input required id="EmailAdress" type="email" class="input">
+								<p style="margin:5px 0 0 20px;color:var(--bittersweet-shimmer)">
+									*Email Adress
+								</p>
+							</div>
 
-							<input required placeholder="Phone Number without Country Code" class="input"
-								id="PhoneNumer" pattern="[0-9]*" minlength="11" maxlength="11">
+							<div>
+								<input required class="input" id="PhoneNumer" pattern="[0-9]*" minlength="11"
+									maxlength="11">
+								<p style="margin:5px 0 0 20px;color:var(--bittersweet-shimmer)">
+									*Phone Number
+								</p>
+							</div>
 						</div>
+
 						<textarea placeholder="Your Message"></textarea>
 
 						<details>
@@ -1598,14 +1646,26 @@
 						</details>
 
 						<div class="formBtn">
-							<h1>Texting Me Only Available in Egypt</h1>
+							<button class="Clear_Form">
+								<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 512 512">
+									<path
+										d="M112 112l20 320c.95 18.49 14.4 32 32 32h184c17.67 0 30.87-13.51 32-32l20-320"
+										fill="var(--orange-yellow-crayola)" stroke="var(--orange-yellow-crayola)"
+										stroke-linecap="round" stroke-linejoin="round" stroke-width="32" />
+									<path stroke="var(--orange-yellow-crayola)" stroke-linecap="round"
+										stroke-miterlimit="10" stroke-width="32" d="M80 112h352" />
+									<path
+										d="M192 112V72h0a23.93 23.93 0 0124-24h80a23.93 23.93 0 0124 24h0v40M256 176v224M184 176l8 224M328 176l-8 224"
+										fill="var(--orange-yellow-crayola)" stroke="var(--orange-yellow-crayola)"
+										stroke-linecap="round" stroke-linejoin="round" stroke-width="32" />
+								</svg>
+							</button>
 
 							<button class="SubmitForm">
-								Send Message
-								<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 512 512">
+								<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 512 512">
 									<path
 										d="M470.3,271.15,43.16,447.31a7.83,7.83,0,0,1-11.16-7V327a8,8,0,0,1,6.51-7.86l247.62-47c17.36-3.29,17.36-28.15,0-31.44l-247.63-47a8,8,0,0,1-6.5-7.85V72.59c0-5.74,5.88-10.26,11.16-8L470.3,241.76A16,16,0,0,1,470.3,271.15Z"
-										style="fill:none;stroke:var(--orange-yellow-crayola);stroke-linecap:round;stroke-linejoin:round;stroke-width:32px" />
+										style="fill:var(--orange-yellow-crayola);stroke:var(--orange-yellow-crayola);stroke-linecap:round;stroke-linejoin:round;stroke-width:32px" />
 								</svg>
 							</button>
 						</div>
